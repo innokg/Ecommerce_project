@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { Row, Col, ListGroup, Image, Form, Button, Card } from 'react-bootstrap'
 import  Message  from '../components/Message'
-import { addToCart } from '../actions/cartActions'
+import { addToCart, removeFromCart } from '../actions/cartActions'
 
 
 
@@ -32,9 +32,10 @@ const CartScreen = () => {
     }
   }, [dispatch, productID, qty])
 
-  const removeFromCartHandler = () => {
-    console.log('Удалить:', id)
+  const removeFromCartHandler = (id) => {
+    dispatch(removeFromCart(id))
   }
+  
   const navigate = useNavigate();
   const checkoutHandler = () =>{
     navigate('/login?redirect=shipping')

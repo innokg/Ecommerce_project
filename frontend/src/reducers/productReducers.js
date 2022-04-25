@@ -22,8 +22,7 @@ export const productListReducer = (state = { products:[] }, action) => {
             
         default:
             return state   
-            
-    
+
     }
 } 
 
